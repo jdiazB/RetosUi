@@ -11,10 +11,54 @@ class Init2Page extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
+
           Image.network(
             "https://images.pexels.com/photos/2499802/pexels-photo-2499802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             fit: BoxFit.cover,
           ),
+          SafeArea(
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(Icons.navigate_before)),
+                        GestureDetector(
+                          onTap: () {
+
+                            print("registrase");
+                          },
+                          child: Text("Register",style: TextStyle(
+                            fontSize: 15,fontWeight: FontWeight.normal
+                          ),
+                              ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30,),
+                    Text("Sign In",style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 30,
+
+                    ),),
+                    Text("Lorem ipsum asadadasdasdasdadasdadadasdasdadasdasdasdaddadashfhfhfhfhf")
+
+                  ],
+                ),
+
+              ),
+            ),
+          ),
+
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -106,20 +150,72 @@ class Init2Page extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 14.0,
+                      height: 60.0,
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 20,
+                            offset: Offset(4,   4)
+                          )
+                        ]
+
+                      ),
+                      child: ListTile(
+                        onTap: () {
+                          print("ingresar");
+                        },
+                        
+                        leading: CircleAvatar(backgroundImage: NetworkImage("https://foroalfa.org/imagenes/ilustraciones/g-1.jpg",),radius: 30),
+                        title: Text("Continue with Google",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14
+                        ),),
+                        trailing: Icon(Icons.trending_flat,color: Colors.black,size: 25,),
+                      ),
                     ),
                     SizedBox(
-                      height: 50.0,
-                      child: ElevatedButton.icon(onPressed: () {
-
-                      }, style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffEA4335),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0)
-                          )
-                      ), icon: SvgPicture.asset('assets/images/google.svg',
-                        color: Colors.white,), label: Text("Google")),
+                      height: 20,
                     ),
+                    Container(
+                      margin: EdgeInsets.all(7),
+                      padding: EdgeInsets.only(left: 12),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 20,
+                                offset: Offset(4,   4)
+                            )
+                          ]
+
+                      ),
+                      child: ListTile(
+                        onTap: () {
+                          print("ingresar");
+                        },
+
+                        leading: CircleAvatar(backgroundImage: NetworkImage("https://marcas-logos.net/wp-content/uploads/2020/01/Facebook-logo-1-500x313.png")),
+                        title: Row(
+                          children: [
+                            SizedBox(width: 7,),
+                            Text("Continue with Facebook",style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14
+                            ),),
+                          ],
+                        ),
+                        trailing: Icon(Icons.trending_flat,color: Colors.black,size: 25,),
+                      ),
+                    ),
+
 
                   ],
                 ),
